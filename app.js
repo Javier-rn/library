@@ -31,3 +31,5 @@ const sampleBook3 = {
   nPages: 130,
   read: false,
 };
+
+function displayBooks() {}
