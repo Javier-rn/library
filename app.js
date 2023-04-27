@@ -32,4 +32,40 @@ const sampleBook3 = {
   read: false,
 };
 
-function displayBooks() {}
+addBookToLibrary(sampleBook1);
+addBookToLibrary(sampleBook2);
+addBookToLibrary(sampleBook3);
+
+function displayBooks(arr) {
+  arr.forEach((book) => {
+    const card = document.createElement('div');
+    const titleDiv = document.createElement('div');
+    const ul = document.createElement('ul');
+    const authorLi = document.createElement('li');
+    const pagesLi = document.createElement('li');
+    const readLi = document.createElement('li');
+
+    card.classList.add('card');
+    card.setAttribute('style', 'width: 18rem');
+    titleDiv.classList.add('card-header', 'fs-3', 'fw-bold');
+    ul.classList.add('list-group', 'list-group-flush');
+    authorLi.classList.add('list-group-item');
+    pagesLi.classList.add('list-group-item');
+    readLi.classList.add('list-group-item');
+
+    titleDiv.textContent = book.title;
+    authorLi.textContent = book.author;
+    pagesLi.textContent = book.nPages;
+    readLi.textContent = book.read ? 'Read' : 'Not read';
+
+    ul.append(authorLi);
+    ul.append(pagesLi);
+    ul.append(readLi);
+
+    card.append(titleDiv);
+    card.append(ul);
+
+    const mainContainer = document.querySelector('.container');
+    mainContainer.append(card);
+  });
+}
