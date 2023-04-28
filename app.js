@@ -69,3 +69,7 @@ function displayBooks(arr) {
     mainContainer.append(card);
   });
 }
+
+displayBooks(myLibrary);
+displayBooks(myLibrary);
+displayBooks(myLibrary);

@@ -2,9 +2,15 @@
   margin: 10px;
 }
 
+.formDiv {
+  display: flex;
+  width: 100%;
+}
+
 form {
-  position: absolute;
-  top: 50px;
-  right: 20px;
-  width: 15%;
+  display: flex;
+}
+
+label {
+  margin: 0 8px 0 16px;
 }
