@@ -84,8 +84,11 @@ newBookBtn.addEventListener('click', function (e) {
 addBookBtn.addEventListener('click', function (e) {
   e.preventDefault();
   const title = e.target.form[0].value;
+  e.target.form[0].value = '';
   const author = e.target.form[1].value;
+  e.target.form[1].value = '';
   const pages = e.target.form[2].value;
+  e.target.form[2].value = '';
   const read = e.target.form[3].value;
   addBookToLibrary(new Book(title, author, pages, read));
   displayBooks(myLibrary);
