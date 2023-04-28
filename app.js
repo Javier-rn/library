@@ -73,3 +73,9 @@ function displayBooks(arr) {
 displayBooks(myLibrary);
 displayBooks(myLibrary);
 displayBooks(myLibrary);
+
+const newBookBtn = document.querySelector('#newBookBtn');
+const form = document.querySelector('form');
+newBookBtn.addEventListener('click', function (e) {
+  form.classList.toggle('invisible');
+});
