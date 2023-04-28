@@ -34,11 +34,19 @@ addBookToLibrary(sampleBook1);
 addBookToLibrary(sampleBook2);
 addBookToLibrary(sampleBook3);
 
+function addDeleteEvent(btn) {
+  btn.addEventListener('click', function (e) {
+    const index = e.target.parentNode.attributes.dataIndex.value;
+    myLibrary.splice(index, 1);
+    displayBooks(myLibrary);
+  });
+}
+
 function displayBooks(arr) {
   const mainContainer = document.querySelector('.cards');
   mainContainer.innerHTML = '';
 
-  arr.forEach((book) => {
+  arr.forEach((book, i) => {
     const card = document.createElement('div');
     const titleDiv = document.createElement('div');
     const ul = document.createElement('ul');
@@ -48,7 +56,7 @@ function displayBooks(arr) {
 
     card.classList.add('card');
     card.setAttribute('style', 'width: 18rem');
-    titleDiv.classList.add('card-header', 'fs-3', 'fw-bold');
+    titleDiv.classList.add('card-header', 'fs-3', 'fw-bold', 'py-3');
     ul.classList.add('list-group', 'list-group-flush');
     authorLi.classList.add('list-group-item');
     pagesLi.classList.add('list-group-item');
@@ -62,6 +70,7 @@ function displayBooks(arr) {
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('deleteBtn');
     deleteBtn.textContent = 'x';
+    addDeleteEvent(deleteBtn);
 
     ul.append(authorLi);
     ul.append(pagesLi);
@@ -70,6 +79,8 @@ function displayBooks(arr) {
     card.append(deleteBtn);
     card.append(titleDiv);
     card.append(ul);
+
+    card.setAttribute('dataIndex', i);
 
     mainContainer.append(card);
   });
