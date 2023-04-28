@@ -105,7 +105,7 @@ addBookBtn.addEventListener('click', function (e) {
   e.target.form[1].value = '';
   const pages = e.target.form[2].value;
   e.target.form[2].value = '';
-  const read = e.target.form[3].value;
+  const read = e.target.form[3].checked;
   addBookToLibrary(new Book(title, author, pages, read));
   displayBooks(myLibrary);
 });
