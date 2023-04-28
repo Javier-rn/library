@@ -1,3 +1,10 @@
 .card {
   margin: 10px;
 }
+
+form {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  width: 15%;
+}
