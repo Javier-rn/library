@@ -5,10 +5,12 @@
 .formDiv {
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 form {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .invisible {
@@ -16,5 +18,13 @@ form {
 }
 
 label {
-  margin: 0 8px 0 16px;
+  margin: 4px 8px 4px 16px;
+}
+
+button {
+  margin-left: 10px;
+}
+
+.cards {
+  width: 100%;
 }

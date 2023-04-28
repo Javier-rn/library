@@ -11,8 +11,6 @@ function Book(title, author, nPages, read) {
   this.read = read;
 }
 
-const newBook = new Book('Game of Thrones', 'George RR Martin', '830', true);
-
 const sampleBook1 = {
   title: 'Game of Thrones',
   author: 'George RR Martin',
@@ -37,6 +35,9 @@ addBookToLibrary(sampleBook2);
 addBookToLibrary(sampleBook3);
 
 function displayBooks(arr) {
+  const mainContainer = document.querySelector('.cards');
+  mainContainer.innerHTML = '';
+
   arr.forEach((book) => {
     const card = document.createElement('div');
     const titleDiv = document.createElement('div');
@@ -65,7 +66,6 @@ function displayBooks(arr) {
     card.append(titleDiv);
     card.append(ul);
 
-    const mainContainer = document.querySelector('.container');
     mainContainer.append(card);
   });
 }
@@ -76,6 +76,17 @@ displayBooks(myLibrary);
 
 const newBookBtn = document.querySelector('#newBookBtn');
 const form = document.querySelector('form');
+const addBookBtn = document.querySelector('#addBookBtn');
 newBookBtn.addEventListener('click', function (e) {
   form.classList.toggle('invisible');
+});
+
+addBookBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  const title = e.target.form[0].value;
+  const author = e.target.form[1].value;
+  const pages = e.target.form[2].value;
+  const read = e.target.form[3].value;
+  addBookToLibrary(new Book(title, author, pages, read));
+  displayBooks(myLibrary);
 });
