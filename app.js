@@ -106,6 +106,10 @@ addBookBtn.addEventListener('click', function (e) {
   const pages = e.target.form[2].value;
   e.target.form[2].value = '';
   const read = e.target.form[3].checked;
-  addBookToLibrary(new Book(title, author, pages, read));
-  displayBooks(myLibrary);
+  if (!title || !author || !pages) {
+    console.log('inputs required');
+  } else {
+    addBookToLibrary(new Book(title, author, pages, read));
+    displayBooks(myLibrary);
+  }
 });
