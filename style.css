@@ -1,5 +1,6 @@
 .card {
   margin: 10px;
+  position: relative;
 }
 
 .formDiv {
@@ -27,4 +28,14 @@ button {
 
 .cards {
   width: 100%;
+}
+
+.deleteBtn {
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(230, 230, 230);
+  width: 30px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }

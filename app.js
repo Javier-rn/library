@@ -59,10 +59,15 @@ function displayBooks(arr) {
     pagesLi.textContent = book.nPages;
     readLi.textContent = book.read ? 'Read' : 'Not read';
 
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('deleteBtn');
+    deleteBtn.textContent = 'x';
+
     ul.append(authorLi);
     ul.append(pagesLi);
     ul.append(readLi);
 
+    card.append(deleteBtn);
     card.append(titleDiv);
     card.append(ul);
 
