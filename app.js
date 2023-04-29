@@ -67,6 +67,10 @@ function displayBooks(arr) {
     pagesLi.textContent = book.nPages;
     readLi.textContent = book.read ? 'Read' : 'Not read';
 
+    const icon = document.createElement('i');
+    icon.classList.add('fa-regular', 'fa-pen-to-square');
+    readLi.append(icon);
+
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('deleteBtn');
     deleteBtn.textContent = 'x';

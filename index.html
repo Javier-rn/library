@@ -12,12 +12,16 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/9dd97bc3c4.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <h1>Library</h1>
     <main class="container d-flex flex-wrap">
-      <div class="formDiv">
-        <button id="newBookBtn">New Book</button>
+      <div class="formDiv container mb-3">
+        <button id="newBookBtn" class="btn btn-info">+</button>
         <form action="" class="invisible">
           <label for="title">Title</label>
           <input
@@ -45,7 +49,9 @@
           />
           <label for="read">Read </label>
           <input type="checkbox" name="read" id="read" />
-          <button type="submit" id="addBookBtn">Add Book</button>
+          <button type="submit" id="addBookBtn" class="btn btn-info">
+            Add Book
+          </button>
         </form>
       </div>
       <div class="container cards d-flex flex-wrap"></div>

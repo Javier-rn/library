@@ -41,3 +41,9 @@ button {
   top: 5px;
   right: 5px;
 }
+
+i {
+  float: right;
+  font-weight: lighter;
+  cursor: pointer;
+}
