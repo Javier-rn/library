@@ -42,6 +42,17 @@ function addDeleteEvent(btn) {
   });
 }
 
+function addEditEvent(element) {
+  element.addEventListener('click', function (e) {
+    const index =
+      e.target.parentNode.parentNode.parentNode.attributes.dataIndex.value;
+    myLibrary[index].read === true
+      ? (myLibrary[index].read = false)
+      : (myLibrary[index].read = true);
+    displayBooks(myLibrary);
+  });
+}
+
 function displayBooks(arr) {
   const mainContainer = document.querySelector('.cards');
   mainContainer.innerHTML = '';
@@ -69,6 +80,7 @@ function displayBooks(arr) {
 
     const icon = document.createElement('i');
     icon.classList.add('fa-regular', 'fa-pen-to-square');
+    addEditEvent(icon);
     readLi.append(icon);
 
     const deleteBtn = document.createElement('button');
